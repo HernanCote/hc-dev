@@ -20,8 +20,8 @@ const theme = {
   fontSizes: {
     h1: '5rem',
     h2: '4rem',
-    h3: '1.375rem',
-    h4: '1.125rem',
+    h3: '1rem',
+    h4: '2rem',
     h5: '1.0625rem',
     normal: '0.9375rem',
     button: '0.8125rem',
@@ -69,6 +69,7 @@ const theme = {
     lightGray: '#CCC',
     shamrock: '#23d997',
     shamrockRgb: '35, 217, 151',
+    navBackground: '#2a2a2a',
   },
   grid: {
     itemsPadding: '1.25rem',
@@ -76,7 +77,7 @@ const theme = {
   },
   heights: {
     footer: '12rem',
-    navbar: '6rem',
+    navbar: '10vh',
     breakLine: '1.5rem',
   },
 };

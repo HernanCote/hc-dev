@@ -11,10 +11,12 @@ const H2 = styled.h2`
 
 const H3 = styled.h4`
   color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.fontSizes.h3};
 `;
 
 const H4 = styled.h4`
   font-weight: bold;
+  font-size: ${({ theme }) => theme.fontSizes.h4};
 `;
 
 const Span = styled.span`
