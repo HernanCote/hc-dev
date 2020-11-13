@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import {
   Button,
@@ -9,45 +8,18 @@ import {
   Img,
 } from '../Foundation';
 
+import {
+  Layout,
+  Description,
+  ImageWrapper,
+  Title,
+  HideWrapper,
+} from './StyledComponents';
+
 import home1 from '../../assets/img/home1.png';
 
-const HeroWrapper = styled.div`
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5rem 10rem;
-  color: white;
-`;
-
-const Description = styled.div`
-  flex: 1;
-  padding-right: 5rem;
-
-  ${H2} {
-    font-weight: lighter;
-  }
-`;
-
-const ImageWrapper = styled.div`
-  flex: 1;
-  overflow: hidden;
-
-  ${Img} {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-  }
-`;
-
-const Title = styled.div``;
-
-const HideWrapper = styled.div`
-  overflow: hidden;
-`;
-
-const AboutHero = () => (
-  <HeroWrapper>
+const Hero = () => (
+  <Layout>
     <Description>
       <Title>
         <HideWrapper className="hide">
@@ -66,7 +38,7 @@ const AboutHero = () => (
     <ImageWrapper className="image">
       <Img src={home1} alt="Huy with camera" />
     </ImageWrapper>
-  </HeroWrapper>
+  </Layout>
 );
 
-export default AboutHero;
+export default Hero;

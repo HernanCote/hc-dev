@@ -1,12 +1,12 @@
 import React from 'react';
 
-import AboutHero from '../../components/AboutHero';
+import Hero from '../../components/Hero';
 import Services from '../../components/Services';
 import Faq from '../../components/Faq';
 
 const About = () => (
   <>
-    <AboutHero />
+    <Hero />
     <Services />
     <Faq />
   </>

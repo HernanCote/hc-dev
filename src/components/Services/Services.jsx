@@ -1,56 +1,42 @@
 import React from 'react';
 
+import ServicesCard from '../ServicesCard/ServicesCard';
 import {
   H2,
-  H3,
-  P,
   Span,
+  Img,
 } from '../Foundation';
-
-import Clock from '../../assets/img/clock.svg';
-import Diaphragm from '../../assets/img/diaphragm.svg';
-import Money from '../../assets/img/money.svg';
-import Teamwork from '../../assets/img/teamwork.svg';
+import {
+  ServicesWrapper,
+  CardsWrapper,
+} from './StyledComponents';
+import {
+  Description,
+  ImageWrapper,
+} from '../Hero';
 
 import home2 from '../../assets/img/home2.png';
+import servicesData from './servicesData';
 
 const Services = () => (
-  <div className="services">
-    <div className="description">
+  <ServicesWrapper>
+    <Description>
       <H2>High <Span>quality</Span> services</H2>
-      <div className="cards">
-        <div className="icon">
-          <img src={Clock} alt="efficient" />
-          <H3>Efficient</H3>
-        </div>
-        <P>Lorem ipsum dolor sit amet.</P>
-      </div>
-      <div className="cards">
-        <div className="icon">
-          <img src={Teamwork} alt="Teamwork" />
-          <H3>Teamwork</H3>
-        </div>
-        <P>Lorem ipsum dolor sit amet.</P>
-      </div>
-      <div className="cards">
-        <div className="icon">
-          <img src={Diaphragm} alt="Diaphragm" />
-          <H3>Diaphragm</H3>
-        </div>
-        <P>Lorem ipsum dolor sit amet.</P>
-      </div>
-      <div className="cards">
-        <div className="icon">
-          <img src={Money} alt="affordable" />
-          <H3>Affordable</H3>
-        </div>
-        <P>Lorem ipsum dolor sit amet.</P>
-      </div>
-    </div>
-    <div className="image">
-      <img src={home2} alt="services" />
-    </div>
-  </div>
+      <CardsWrapper>
+        {servicesData.map(service => (
+          <ServicesCard
+            key={service.title}
+            title={service.title}
+            icon={service.icon}
+            description={service.description}
+          />
+        ))}
+      </CardsWrapper>
+    </Description>
+    <ImageWrapper>
+      <Img src={home2} alt="services" />
+    </ImageWrapper>
+  </ServicesWrapper>
 );
 
 export default Services;
