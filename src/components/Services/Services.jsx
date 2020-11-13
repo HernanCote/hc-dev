@@ -1,5 +1,12 @@
 import React from 'react';
 
+import {
+  H2,
+  H3,
+  P,
+  Span,
+} from '../Foundation';
+
 import Clock from '../../assets/img/clock.svg';
 import Diaphragm from '../../assets/img/diaphragm.svg';
 import Money from '../../assets/img/money.svg';
@@ -10,34 +17,34 @@ import home2 from '../../assets/img/home2.png';
 const Services = () => (
   <div className="services">
     <div className="description">
-      <h2>High <span>quality</span> services</h2>
+      <H2>High <Span>quality</Span> services</H2>
       <div className="cards">
         <div className="icon">
           <img src={Clock} alt="efficient" />
-          <h3>Efficient</h3>
+          <H3>Efficient</H3>
         </div>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <P>Lorem ipsum dolor sit amet.</P>
       </div>
       <div className="cards">
         <div className="icon">
           <img src={Teamwork} alt="Teamwork" />
-          <h3>Teamwork</h3>
+          <H3>Teamwork</H3>
         </div>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <P>Lorem ipsum dolor sit amet.</P>
       </div>
       <div className="cards">
         <div className="icon">
           <img src={Diaphragm} alt="Diaphragm" />
-          <h3>Diaphragm</h3>
+          <H3>Diaphragm</H3>
         </div>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <P>Lorem ipsum dolor sit amet.</P>
       </div>
       <div className="cards">
         <div className="icon">
           <img src={Money} alt="affordable" />
-          <h3>Affordable</h3>
+          <H3>Affordable</H3>
         </div>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <P>Lorem ipsum dolor sit amet.</P>
       </div>
     </div>
     <div className="image">

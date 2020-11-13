@@ -1,34 +1,41 @@
 import React from 'react';
 
+import {
+  H2,
+  H4,
+  P,
+  Span,
+} from '../Foundation';
+
 const Faq = () => (
   <div className="faq">
-    <h2>Any questions? <span>FAQ</span> </h2>
+    <H2>Any questions? <Span>FAQ</Span> </H2>
     <div className="question">
-      <h4>How Do I Start?</h4>
+      <H4>How Do I Start?</H4>
       <div className="answer">
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, explicabo?</p>
+        <P>Lorem ipsum dolor sit amet.</P>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, explicabo?</P>
       </div>
     </div>
     <div className="question">
-      <h4>Daily Schedule</h4>
+      <H4>Daily Schedule</H4>
       <div className="answer">
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, explicabo?</p>
+        <P>Lorem ipsum dolor sit amet.</P>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, explicabo?</P>
       </div>
     </div>
     <div className="question">
-      <h4>Different Payment Methods</h4>
+      <H4>Different Payment Methods</H4>
       <div className="answer">
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, explicabo?</p>
+        <P>Lorem ipsum dolor sit amet.</P>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, explicabo?</P>
       </div>
     </div>
     <div className="question">
-      <h4>What Products Do You Offer</h4>
+      <H4>What Products Do You Offer</H4>
       <div className="answer">
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, explicabo?</p>
+        <P>Lorem ipsum dolor sit amet.</P>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, explicabo?</P>
       </div>
     </div>
   </div>
