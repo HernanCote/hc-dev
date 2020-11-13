@@ -5,8 +5,8 @@ import { H3 } from '../Foundation';
 const IconWrapper = styled.div`
   ${H3} {
     margin-left: 1rem;
-    background: #FFF;
-    color: #000;
+    background: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black};
     padding: 1rem;
   }
 `;

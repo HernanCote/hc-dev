@@ -1,29 +1,25 @@
 import styled from 'styled-components';
 
 const H1 = styled.h1`
-  
+  font-size: ${({ theme }) => theme.fontSizes.h1};
 `;
 
 const H2 = styled.h2`
   font-weight: lighter;
-  font-size: 4rem;
+  font-size: ${({ theme }) => theme.fontSizes.h2};
 `;
 
 const H3 = styled.h4`
-  color: #FFF;
+  color: ${({ theme }) => theme.colors.white};
 `;
 
-const H4 = styled.h5`
+const H4 = styled.h4`
   font-weight: bold;
-`;
-
-const H5 = styled.h6`
-
 `;
 
 const Span = styled.span`
   font-weight: bold;
-  color: #23d997;
+  color: ${({ theme }) => theme.colors.shamrock};
 `;
 
 const A = styled.a`
@@ -32,7 +28,7 @@ const A = styled.a`
 
 const P = styled.p`
   padding: 3rem 0;
-  color: #ccc;
+  color: #${({ theme }) => theme.colors.lightGray};
   font-size: 1.4rem;
   line-height: 150%;
 `;
@@ -46,7 +42,6 @@ export {
   H2,
   H3,
   H4,
-  H5,
   P,
   A,
 };

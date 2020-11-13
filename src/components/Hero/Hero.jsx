@@ -16,7 +16,7 @@ import {
   HideWrapper,
 } from './StyledComponents';
 
-import home1 from '../../assets/img/home1.png';
+import me from '../../assets/img/me.jpg';
 
 const Hero = () => (
   <Layout>
@@ -36,7 +36,7 @@ const Hero = () => (
       <Button type="button">Contact</Button>
     </Description>
     <ImageWrapper className="image">
-      <Img src={home1} alt="Huy with camera" />
+      <Img src={me} alt="Huy with camera" />
     </ImageWrapper>
   </Layout>
 );

@@ -15,7 +15,7 @@ import {
   ImageWrapper,
 } from '../Hero';
 
-import home2 from '../../assets/img/home2.png';
+import code from '../../assets/img/code2.jpg';
 import servicesData from './servicesData';
 
 const Services = () => (
@@ -34,7 +34,7 @@ const Services = () => (
       </CardsWrapper>
     </Description>
     <ImageWrapper>
-      <Img src={home2} alt="services" />
+      <Img src={code} alt="services" />
     </ImageWrapper>
   </ServicesWrapper>
 );
