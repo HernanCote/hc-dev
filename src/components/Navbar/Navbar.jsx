@@ -1,8 +1,6 @@
 import React from 'react';
-
-import {
-  A,
-} from '../Foundation';
+import { Link as BaseLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 import {
   Logo,
@@ -11,22 +9,27 @@ import {
   Root,
 } from './StyledComponents';
 
+const Link = styled(BaseLink)`
+  color: ${({ theme }) => theme.colors.white};
+  text-decoration: none;
+`;
+
 const Navbar = () => (
   <Root>
     <Logo>
-      <A href="#">
+      <Link to="/">
         Hernán Cote
-      </A>
+      </Link>
     </Logo>
     <NavItems>
       <NavItem>
-        <A href="#">About Me</A>
+        <Link to="/">About Me</Link>
       </NavItem>
       <NavItem>
-        <A href="#">My Work</A>
+        <Link to="/my-work">My Work</Link>
       </NavItem>
       <NavItem>
-        <A href="#">Contact</A>
+        <Link to="/contact">Contact</Link>
       </NavItem>
     </NavItems>
   </Root>

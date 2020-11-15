@@ -9,7 +9,7 @@ const H2 = styled.h2`
   font-size: ${({ theme }) => theme.fontSizes.h2};
 `;
 
-const H3 = styled.h4`
+const H3 = styled.h3`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.h3};
 `;
@@ -30,7 +30,7 @@ const A = styled.a`
 
 const P = styled.p`
   padding: 3rem 0;
-  color: #${({ theme }) => theme.colors.lightGray};
+  color: ${({ theme }) => theme.colors.lightGray};
   font-size: 1.4rem;
   line-height: 150%;
 `;

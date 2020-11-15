@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-import {
-  A,
-} from '../Foundation';
-
 const Root = styled.nav`
   min-height: ${({ theme }) => theme.heights.navbar};
   display: flex;
@@ -12,11 +8,6 @@ const Root = styled.nav`
   align-items: center;
   padding: 1rem 10rem;
   background: ${({ theme }) => theme.colors.navBackground};
-
-  ${A} {
-    color: ${({ theme }) => theme.colors.white};
-    text-decoration: none;
-  }
 `;
 
 const NavItems = styled.ul`
