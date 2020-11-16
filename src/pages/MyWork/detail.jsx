@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import {
   H2,
-  H3,
   Img,
-  P,
 } from '../../components/Foundation';
+import Awards from '../../components/Awards';
+
+import { pageAnimation } from '../../utils';
 
 import data from './data';
 
-const RootDetail = styled.div`
+const RootDetail = styled(motion.div)`
   color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -32,14 +34,6 @@ const HeadLine = styled.div`
     height: 70vh;
     object-fit: cover;
   }
-`;
-
-const Awards = styled.div`
-  min-height: 80vh;
-  display: flex;
-  margin: 5rem 10rem;
-  align-items: center;
-  justify-content: space-around;
 `;
 
 const ImageDisplay = styled.div`
@@ -64,63 +58,33 @@ const MyWorkDetail = () => {
   }, [url, projects]);
 
   return (
-    <>
+    <RootDetail
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       { project && (
-        <RootDetail>
+        <>
           <HeadLine>
-            <H2>{project.title}</H2>
-            <Img src={project.mainImage} alt={project.title} />
+            <H2>{project?.title}</H2>
+            <Img src={project?.mainImage} alt={project?.title} />
           </HeadLine>
-          <Awards>
-            {project.awards.map(award => (
-              <Award
-                key={award.title}
-                {...award}
+          <Awards
+            awards={project?.awards}
+          />
+          {project?.secondaryImage && (
+            <ImageDisplay>
+              <Img
+                src={project.secondaryImage}
+                alt={project.title}
               />
-            ))}
-          </Awards>
-          {project.secondaryImage && (
-          <ImageDisplay>
-            <Img
-              src={project.secondaryImage}
-              alt={project.title}
-            />
-          </ImageDisplay>
+            </ImageDisplay>
           )}
-        </RootDetail>
+        </>
       )}
-    </>
+    </RootDetail>
   );
 };
-
-const RootAward = styled.div`
-  padding: 5rem;
-
-  ${H3} {
-    font-size: 1.25rem;
-  }
-
-  ${P} {
-    padding: 2rem 0;
-  }
-`;
-
-const Line = styled.div`
-  width: 50%;
-  background: ${({ theme }) => theme.colors.shamrock};
-  height: 0.5rem;
-  margin: 1rem 0;
-`;
-
-const Award = ({
-  title,
-  description,
-}) => (
-  <RootAward>
-    <H3>{title}</H3>
-    <Line />
-    <P>{description}</P>
-  </RootAward>
-);
 
 export default MyWorkDetail;

@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Button,
   H2,
+  MotionH2,
   P,
   Span,
   Img,
@@ -18,18 +19,50 @@ import {
 
 import me from '../../assets/img/me.jpg';
 
+const titleAnimation = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 2 } },
+};
+
+const container = {
+  hidden: { x: 100 },
+  show: {
+    x: 0,
+    transition: {
+      duration: 0.75,
+      ease: 'easeOut',
+      staggerChildren: 0.75,
+    },
+  },
+};
+
 const Hero = () => (
   <Layout>
     <Description>
-      <Title>
-        <HideWrapper className="hide">
-          <H2>I work to make</H2>
+      <Title
+        initial="hidden"
+        animate="show"
+        variants={container}
+      >
+        <HideWrapper>
+          <MotionH2
+            variants={titleAnimation}
+          >
+            I work to make
+          </MotionH2>
         </HideWrapper>
-        <HideWrapper className="hide">
-          <H2>Your <Span>dreams</Span> come</H2>
+        <HideWrapper>
+          <MotionH2
+            variants={titleAnimation}
+          >Your <Span>dreams</Span> come
+          </MotionH2>
         </HideWrapper>
-        <HideWrapper className="hide">
-          <H2>true.</H2>
+        <HideWrapper>
+          <MotionH2
+            variants={titleAnimation}
+          >
+            true.
+          </MotionH2>
         </HideWrapper>
       </Title>
       <P>Contact me for any tech ideas you have. I am a professional with amazing skills.</P>

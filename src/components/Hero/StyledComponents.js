@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import {
   H2,
+  MotionH2,
   Img,
 } from '../Foundation';
 
@@ -18,7 +20,7 @@ const Description = styled.div`
   flex: 1;
   padding-right: 5rem;
 
-  ${H2} {
+  ${H2}, ${MotionH2} {
     font-weight: lighter;
   }
 `;
@@ -34,7 +36,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Title = styled.div``;
+const Title = styled(motion.div)``;
 
 const HideWrapper = styled.div`
   overflow: hidden;
