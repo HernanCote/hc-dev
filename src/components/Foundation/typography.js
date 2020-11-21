@@ -86,7 +86,10 @@ const MotionP = styled(motion.p)`
 
 const Img = styled.img``;
 
+const MotionImg = styled(motion.img)``;
+
 export {
+  MotionImg,
   Img,
   Span,
   H1,

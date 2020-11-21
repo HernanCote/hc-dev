@@ -2,14 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import {
-  H2,
-  Img,
+  MotionH2,
+  MotionImg,
 } from '../Foundation';
 
 import {
   Root,
   Line,
+  HideContainer,
 } from './StyledComponents';
+
+import {
+  fadeAnimation,
+  photoAnimation,
+  lineAnimation,
+} from '../../utils';
 
 const ProjectCard = ({
   title,
@@ -17,10 +24,22 @@ const ProjectCard = ({
   image,
 }) => (
   <Root>
-    <H2>{title}</H2>
-    <Line />
+    <MotionH2
+      variants={fadeAnimation}
+    >
+      {title}
+    </MotionH2>
+    <Line
+      variants={lineAnimation}
+    />
     <Link to={to}>
-      <Img src={image} alt={title} />
+      <HideContainer>
+        <MotionImg
+          variants={photoAnimation}
+          src={image}
+          alt={title}
+        />
+      </HideContainer>
     </Link>
   </Root>
 );

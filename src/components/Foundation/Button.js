@@ -1,7 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Button = styled.button`
-  font-weight: bold;
+import { motion } from 'framer-motion';
+
+const commonStyles = css`
+font-weight: bold;
   font-size: 1.1rem;
   cursor: pointer;
   padding: 1rem 2rem;
@@ -17,4 +19,15 @@ const Button = styled.button`
   }
 `;
 
-export default Button;
+const Button = styled.button`
+  ${commonStyles}
+`;
+
+const MotionButton = styled(motion.button)`
+  ${commonStyles}
+`;
+
+export {
+  Button,
+  MotionButton,
+};

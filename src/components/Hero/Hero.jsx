@@ -1,12 +1,12 @@
 import React from 'react';
 
+import Wave from '../Wave';
 import {
-  Button,
-  H2,
+  MotionButton,
   MotionH2,
-  P,
+  MotionP,
   Span,
-  Img,
+  MotionImg,
 } from '../Foundation';
 
 import {
@@ -17,33 +17,18 @@ import {
   HideWrapper,
 } from './StyledComponents';
 
+import {
+  titleAnimation,
+  fadeAnimation,
+  photoAnimation,
+} from '../../utils';
+
 import me from '../../assets/img/me.jpg';
-
-const titleAnimation = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 2 } },
-};
-
-const container = {
-  hidden: { x: 100 },
-  show: {
-    x: 0,
-    transition: {
-      duration: 0.75,
-      ease: 'easeOut',
-      staggerChildren: 0.75,
-    },
-  },
-};
 
 const Hero = () => (
   <Layout>
     <Description>
-      <Title
-        initial="hidden"
-        animate="show"
-        variants={container}
-      >
+      <Title>
         <HideWrapper>
           <MotionH2
             variants={titleAnimation}
@@ -65,12 +50,26 @@ const Hero = () => (
           </MotionH2>
         </HideWrapper>
       </Title>
-      <P>Contact me for any tech ideas you have. I am a professional with amazing skills.</P>
-      <Button type="button">Contact</Button>
+      <MotionP
+        variants={fadeAnimation}
+      >
+        Contact me for any tech ideas you have. I am a professional with amazing skills.
+      </MotionP>
+      <MotionButton
+        type="button"
+        variants={fadeAnimation}
+      >
+        Contact
+      </MotionButton>
     </Description>
     <ImageWrapper className="image">
-      <Img src={me} alt="Huy with camera" />
+      <MotionImg
+        variants={photoAnimation}
+        src={me}
+        alt="Huy with camera"
+      />
     </ImageWrapper>
+    <Wave />
   </Layout>
 );
 

@@ -4,7 +4,7 @@ import ServicesCard from '../ServicesCard/ServicesCard';
 import {
   H2,
   Span,
-  Img,
+  MotionImg,
 } from '../Foundation';
 import {
   ServicesWrapper,
@@ -34,7 +34,7 @@ const Services = () => (
       </CardsWrapper>
     </Description>
     <ImageWrapper>
-      <Img src={code} alt="services" />
+      <MotionImg src={code} alt="services" />
     </ImageWrapper>
   </ServicesWrapper>
 );
