@@ -7,7 +7,7 @@ import {
   MotionImg,
 } from '../Foundation';
 
-const Layout = styled.div`
+const Layout = styled(motion.div)`
   min-height: 90vh;
   display: flex;
   align-items: center;

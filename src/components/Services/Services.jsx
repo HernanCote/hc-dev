@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useScroll } from '../hocs';
 import ServicesCard from '../ServicesCard/ServicesCard';
 import {
   H2,
@@ -16,27 +17,38 @@ import {
 } from '../Hero';
 
 import code from '../../assets/img/code2.jpg';
-import servicesData from './servicesData';
+import { scrollRevealAnimation } from '../../utils';
 
-const Services = () => (
-  <ServicesWrapper>
-    <Description>
-      <H2>High <Span>quality</Span> services</H2>
-      <CardsWrapper>
-        {servicesData.map(service => (
-          <ServicesCard
-            key={service.title}
-            title={service.title}
-            icon={service.icon}
-            description={service.description}
-          />
-        ))}
-      </CardsWrapper>
-    </Description>
-    <ImageWrapper>
-      <MotionImg src={code} alt="services" />
-    </ImageWrapper>
-  </ServicesWrapper>
-);
+const Services = ({
+  services = [],
+}) => {
+  const [element, controls] = useScroll();
+
+  return (
+    <ServicesWrapper
+      variants={scrollRevealAnimation}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+    >
+      <Description>
+        <H2>High <Span>quality</Span> services</H2>
+        <CardsWrapper>
+          {services.map(service => (
+            <ServicesCard
+              key={service.title}
+              title={service.title}
+              icon={service.icon}
+              description={service.description}
+            />
+          ))}
+        </CardsWrapper>
+      </Description>
+      <ImageWrapper>
+        <MotionImg src={code} alt="services" />
+      </ImageWrapper>
+    </ServicesWrapper>
+  );
+};
 
 export default Services;

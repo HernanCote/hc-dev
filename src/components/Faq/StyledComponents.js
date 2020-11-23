@@ -27,29 +27,7 @@ const Root = styled(Layout)`
   }
 `;
 
-const Line = styled.div`
-  background: ${({ theme }) => theme.colors.lightGray};
-  height: 0.2rem;
-  margin: 2rem 0;
-  width: 100%;
-`;
-
-const Question = styled.div`
-  padding: 3rem 0;
-  cursor: pointer;
-`;
-
-const Answer = styled.div`
-  padding: 2rem 0;
-
-  ${P} {
-    padding: 1rem 0;
-  }
-`;
-
 export {
-  Answer,
-  Question,
-  Line,
+  // eslint-disable-next-line import/prefer-default-export
   Root,
 };

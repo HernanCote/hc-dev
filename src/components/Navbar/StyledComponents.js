@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Root = styled.nav`
+  z-index: 1000;
   min-height: ${({ theme }) => theme.heights.navbar};
   display: flex;
   margin: auto;

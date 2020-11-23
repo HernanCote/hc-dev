@@ -8,6 +8,9 @@ import Faq from '../../components/Faq';
 
 import { pageAnimation } from '../../utils';
 
+import faqItems from './faqItemsMock';
+import servicesData from './servicesData';
+
 const Root = styled(motion.div)``;
 
 const About = () => (
@@ -18,8 +21,8 @@ const About = () => (
     exit="exit"
   >
     <Hero />
-    <Services />
-    <Faq />
+    <Services services={servicesData} />
+    <Faq faqs={faqItems} />
   </Root>
 );
 

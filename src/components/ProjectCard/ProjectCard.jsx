@@ -16,32 +16,43 @@ import {
   fadeAnimation,
   photoAnimation,
   lineAnimation,
+  scrollRevealAnimation,
 } from '../../utils';
+
+import { useScroll } from '../hocs';
 
 const ProjectCard = ({
   title,
   to,
   image,
-}) => (
-  <Root>
-    <MotionH2
-      variants={fadeAnimation}
+}) => {
+  const [element, controls] = useScroll();
+  return (
+    <Root
+      variants={scrollRevealAnimation}
+      animate={controls}
+      initial="hidden"
+      ref={element}
     >
-      {title}
-    </MotionH2>
-    <Line
-      variants={lineAnimation}
-    />
-    <Link to={to}>
-      <HideContainer>
-        <MotionImg
-          variants={photoAnimation}
-          src={image}
-          alt={title}
-        />
-      </HideContainer>
-    </Link>
-  </Root>
-);
+      <MotionH2
+        variants={fadeAnimation}
+      >
+        {title}
+      </MotionH2>
+      <Line
+        variants={lineAnimation}
+      />
+      <Link to={to}>
+        <HideContainer>
+          <MotionImg
+            variants={photoAnimation}
+            src={image}
+            alt={title}
+          />
+        </HideContainer>
+      </Link>
+    </Root>
+  );
+};
 
 export default ProjectCard;

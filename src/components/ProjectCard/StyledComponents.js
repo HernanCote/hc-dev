@@ -6,7 +6,7 @@ import {
   MotionImg,
 } from '../Foundation';
 
-const Root = styled.div`
+const Root = styled(motion.div)`
   padding-bottom: 10rem;
 
   ${MotionH2} {
