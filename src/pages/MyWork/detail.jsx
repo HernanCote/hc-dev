@@ -12,6 +12,7 @@ import Awards from '../../components/Awards';
 import { pageAnimation } from '../../utils';
 
 import data from './data';
+import ScrollTop from '../../components/hocs/ScrollTop';
 
 const RootDetail = styled(motion.div)`
   color: ${({ theme }) => theme.colors.white};
@@ -49,7 +50,7 @@ const MyWorkDetail = () => {
   const history = useHistory();
   const url = history.location.pathname;
 
-  const [projects, setProjects] = useState(data);
+  const [projects] = useState(data);
   const [project, setProject] = useState(null);
 
   useEffect(() => {
@@ -58,13 +59,15 @@ const MyWorkDetail = () => {
   }, [url, projects]);
 
   return (
-    <RootDetail
-      variants={pageAnimation}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-    >
-      { project && (
+    <>
+      <ScrollTop />
+      <RootDetail
+        variants={pageAnimation}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+      >
+        { project && (
         <>
           <HeadLine>
             <H2>{project?.title}</H2>
@@ -82,8 +85,9 @@ const MyWorkDetail = () => {
             </ImageDisplay>
           )}
         </>
-      )}
-    </RootDetail>
+        )}
+      </RootDetail>
+    </>
   );
 };
 

@@ -14,7 +14,7 @@ const MotionH1 = styled(motion.h1)`
 `;
 
 const h2Styles = css`
-  font-weight: lighter;
+  font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes.h2};
 `;
 

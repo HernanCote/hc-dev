@@ -10,20 +10,24 @@ import { pageAnimation } from '../../utils';
 
 import faqItems from './faqItemsMock';
 import servicesData from './servicesData';
+import ScrollTop from '../../components/hocs/ScrollTop';
 
 const Root = styled(motion.div)``;
 
 const About = () => (
-  <Root
-    variants={pageAnimation}
-    initial="hidden"
-    animate="show"
-    exit="exit"
-  >
-    <Hero />
-    <Services services={servicesData} />
-    <Faq faqs={faqItems} />
-  </Root>
+  <>
+    <ScrollTop />
+    <Root
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
+      <Hero />
+      <Services services={servicesData} />
+      <Faq faqs={faqItems} />
+    </Root>
+  </>
 );
 
 export default About;

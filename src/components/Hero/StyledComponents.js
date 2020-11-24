@@ -5,24 +5,42 @@ import {
   H2,
   MotionH2,
   MotionImg,
+  MotionButton,
 } from '../Foundation';
 
+import { getMediaMinWidth } from '../../utils';
+
 const Layout = styled(motion.div)`
+  display: block;
   min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5rem 10rem;
-  color: white;
+  padding: 2rem 2rem;
+  color: ${({ theme }) => theme.colors.white};
+  text-align: center;
+
+  ${getMediaMinWidth('lg')} {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 10rem;
+  }
 `;
 
 const Description = styled.div`
   z-index: 2;
   flex: 1;
-  padding-right: 5rem;
+  padding: 0;
+  
+  ${MotionButton} {
+    margin: 2rem 0 5rem 0;
+  }
 
   ${H2}, ${MotionH2} {
     font-weight: lighter;
+  }
+
+  ${getMediaMinWidth('lg')} {
+    padding-right: 5rem;
   }
 `;
 

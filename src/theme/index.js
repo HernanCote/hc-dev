@@ -7,7 +7,7 @@ const theme = {
     sm: 700,
     md: 1024,
     ml: maxWidthInPx,
-    lg: 1440,
+    lg: 1300,
     xl: 1920,
     xxl: 2560,
   },

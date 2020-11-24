@@ -10,6 +10,13 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.colors.background};
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  html {
+    @media (max-width: 1700px) {
+      font-size: 75%;
+    }
   }
 `;
 

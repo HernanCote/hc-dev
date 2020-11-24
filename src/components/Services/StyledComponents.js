@@ -5,6 +5,7 @@ import {
   H2,
   P,
 } from '../Foundation';
+import { getMediaMinWidth } from '../../utils';
 
 const ServicesWrapper = styled(Layout)`
   ${H2} {
@@ -20,6 +21,11 @@ const ServicesWrapper = styled(Layout)`
 const CardsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+
+  ${getMediaMinWidth('lg')} {
+    justify-content: left;
+  }
 `;
 
 export {
