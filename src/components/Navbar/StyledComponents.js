@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import { getMediaMinWidth } from '../../utils';
@@ -53,9 +54,22 @@ const Logo = styled.div`
   }
 `;
 
+const Line = styled(motion.vid)`
+  height: 0.3rem;
+  background: ${({ theme }) => theme.colors.shamrock};
+  width: 0;
+  position: absolute;
+  bottom: -80%;
+  left: 0;
+  ${getMediaMinWidth('lg')} {
+    left: 60%;
+  }
+`;
+
 export {
   Logo,
   NavItem,
   NavItems,
   Root,
+  Line,
 };

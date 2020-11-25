@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as BaseLink } from 'react-router-dom';
+import { Link as BaseLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import {
@@ -7,6 +7,7 @@ import {
   NavItem,
   NavItems,
   Root,
+  Line,
 } from './StyledComponents';
 
 const Link = styled(BaseLink)`
@@ -14,25 +15,43 @@ const Link = styled(BaseLink)`
   text-decoration: none;
 `;
 
-const Navbar = () => (
-  <Root>
-    <Logo>
-      <Link to="/">
-        Hernán Cote
-      </Link>
-    </Logo>
-    <NavItems>
-      <NavItem>
-        <Link to="/">About Me</Link>
-      </NavItem>
-      <NavItem>
-        <Link to="/my-work">My Work</Link>
-      </NavItem>
-      <NavItem>
-        <Link to="/contact">Contact</Link>
-      </NavItem>
-    </NavItems>
-  </Root>
-);
+const Navbar = () => {
+  const { pathname } = useLocation();
+  return (
+    <Root>
+      <Logo>
+        <Link to="/">
+          Hernán Cote
+        </Link>
+      </Logo>
+      <NavItems>
+        <NavItem>
+          <Link to="/">About Me</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: 0 }}
+            animate={{ width: pathname === '/' ? '50%' : 0 }}
+          />
+        </NavItem>
+        <NavItem>
+          <Link to="/my-work">My Work</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: 0 }}
+            animate={{ width: pathname === '/my-work' ? '50%' : 0 }}
+          />
+        </NavItem>
+        <NavItem>
+          <Link to="/contact">Contact</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: 0 }}
+            animate={{ width: pathname === '/contact' ? '50%' : 0 }}
+          />
+        </NavItem>
+      </NavItems>
+    </Root>
+  );
+};
 
 export default Navbar;
