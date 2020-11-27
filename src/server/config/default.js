@@ -17,6 +17,7 @@ module.exports = {
         readKey: process.env.COSMIC_READ_KEY,
         endpoints: {
           projects: 'objects',
+          project: 'object/:slug',
         },
       },
     },
