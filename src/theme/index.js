@@ -1,15 +1,7 @@
-const maxWidthInPx = 1152;
-
 const theme = {
   breakpoints: {
-    xxs: 320,
-    xs: 420,
-    sm: 700,
     md: 1024,
-    ml: maxWidthInPx,
     lg: 1300,
-    xl: 1920,
-    xxl: 2560,
   },
   zIndex: {
     header: 1000,
@@ -40,24 +32,6 @@ const theme = {
       small: '1.25rem',
     },
   },
-  spacing: {
-    xSmall: '0.8125rem', // 13px
-    small: '0.875rem', // 14px
-    base: '1rem', // 16px
-    wide: '1.25rem', // 20px
-    h5: '1.125rem', // 18px
-    h4: '1.375rem', // 22px
-    h3: '1.75rem', // 28px
-    h2: '2.25rem', // 36px
-    h1: '2.625rem', // 42px
-
-    grid: '0.5rem',
-    md: {
-      grid: '1rem',
-    },
-    maxWidth: `${maxWidthInPx / 16}rem`,
-    commonSpacing: '4rem',
-  },
   colors: {
     white: '#FFFFFF',
     whiteRgb: '255, 255, 255',
@@ -73,10 +47,6 @@ const theme = {
     hcLighterBlue: '#23BED9',
     shamrockRgb: '35, 217, 151',
     navBackground: '#2a2a2a',
-  },
-  grid: {
-    itemsPadding: '1.25rem',
-    itemWidth: '25.5rem',
   },
   heights: {
     footer: '12rem',

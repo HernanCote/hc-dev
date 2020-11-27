@@ -6,7 +6,7 @@ module.exports = {
         remainingSessionTime: false,
         sessionUserData: false,
         cache: false,
-        errorStack: false,
+        errorStack: true,
         httpEventClient: false,
       },
     },
