@@ -6,9 +6,6 @@ const parseErrors = err => {
   let statusCode;
   let data;
   const errors = (Array.isArray(err) ? err : [err])
-  // FIXME: error list are being a list of 'undefined'
-  //    Adding a temporally default value to avoid crashes
-  //    Need further debugging
     .map((error = 'UNKNOWN ERROR') => {
       if (error.response && error.response.status) {
         statusCode = error.response.status;
