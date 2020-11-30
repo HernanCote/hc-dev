@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -8,10 +7,13 @@ import {
   Img,
 } from '../../components/Foundation';
 import Awards from '../../components/Awards';
+import Loader from '../../components/Loader';
 
-import { pageAnimation } from '../../utils';
+import {
+  pageAnimation,
+  fetchComponentData,
+} from '../../utils';
 
-import data from './data';
 import ScrollTop from '../../components/hocs/ScrollTop';
 
 const RootDetail = styled(motion.div)`
@@ -19,21 +21,17 @@ const RootDetail = styled(motion.div)`
 `;
 
 const HeadLine = styled.div`
-  min-height: 90vh;
-  padding-top: 20vh;
-  position: relative;
+  padding-top: 5rem;
   
   ${H2} {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -10%);
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   ${Img} {
     width: 100%;
-    height: 70vh;
-    object-fit: cover;
+    height: 70%;
+    object-fit: contain;
   }
 `;
 
@@ -41,22 +39,30 @@ const ImageDisplay = styled.div`
   min-height: 50vh;
   ${Img} {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
+    height: 70%;
+    object-fit: contain;
   }
 `;
 
-const MyWorkDetail = () => {
-  const history = useHistory();
-  const url = history.location.pathname;
+const MyWorkDetail = ({
+  match,
+}) => {
+  const { slug } = match.params;
 
-  const [projects] = useState(data);
+  const [isLoading, setIsLoading] = useState(true);
   const [project, setProject] = useState(null);
 
+  const handleGetProjectData = async () => {
+    const { data } = await fetchComponentData({
+      endpoint: `/api/projects/${slug}`,
+    });
+    setIsLoading(false);
+    setProject(data);
+  };
+
   useEffect(() => {
-    const currentProject = projects.filter(x => x.url === url)[0];
-    setProject(currentProject);
-  }, [url, projects]);
+    handleGetProjectData();
+  }, [slug]);
 
   return (
     <>
@@ -67,25 +73,31 @@ const MyWorkDetail = () => {
         animate="show"
         exit="exit"
       >
-        { project && (
         <>
-          <HeadLine>
-            <H2>{project?.title}</H2>
-            <Img src={project?.mainImage} alt={project?.title} />
-          </HeadLine>
-          <Awards
-            awards={project?.awards}
-          />
-          {project?.secondaryImage && (
-            <ImageDisplay>
-              <Img
-                src={project.secondaryImage}
-                alt={project.title}
-              />
-            </ImageDisplay>
+          {!isLoading && (
+            <>
+              <HeadLine>
+                <H2>{project?.title}</H2>
+                <Img src={project?.mainImage} alt={project?.title} />
+              </HeadLine>
+              {project?.awards?.length > 0
+                && (
+                  <Awards
+                    awards={project?.awards}
+                  />
+                )}
+              {project?.secondaryImage && (
+                <ImageDisplay>
+                  <Img
+                    src={project.secondaryImage}
+                    alt={project.title}
+                  />
+                </ImageDisplay>
+              )}
+            </>
           )}
+          {isLoading && <Loader type="Oval" />}
         </>
-        )}
       </RootDetail>
     </>
   );

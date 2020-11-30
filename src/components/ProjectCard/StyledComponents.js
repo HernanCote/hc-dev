@@ -15,8 +15,8 @@ const Root = styled(motion.div)`
 
   ${MotionImg} {
     width: 100%;
-    height: 70vh;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
   }
 `;
 

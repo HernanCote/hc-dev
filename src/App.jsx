@@ -29,7 +29,7 @@ const App = () => {
           key={location.pathname}
         >
           <Route path="/my-work" exact component={MyWork} />
-          <Route path="/my-work/:id" component={MyWorkDetail} />
+          <Route path="/my-work/:slug" component={MyWorkDetail} />
           <Route path="/contact" component={Contact} />
           <Route path="/" exact component={About} />
         </Switch>

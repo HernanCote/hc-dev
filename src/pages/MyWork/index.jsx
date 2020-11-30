@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import ProjectCard from '../../components/ProjectCard';
-
-import projects from './data';
+import Loader from '../../components/Loader';
 
 import {
+  fetchComponentData,
   getMediaMinWidth,
   pageAnimation,
   sliderAnimation,
@@ -47,32 +47,51 @@ const Frame4 = styled(Frame1)`
   background: ${({ theme }) => theme.colors.shamrock};
 `;
 
-const MyWork = () => (
-  <>
-    <ScrollTop />
-    <Root
-      variants={pageAnimation}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-      style={{ background: '#fff' }}
-    >
-      <FramesContainer variants={sliderContainer}>
-        <Frame1 variants={sliderAnimation} />
-        <Frame2 variants={sliderAnimation} />
-        <Frame3 variants={sliderAnimation} />
-        <Frame4 variants={sliderAnimation} />
-      </FramesContainer>
-      {projects.map(project => (
-        <ProjectCard
-          key={project.title}
-          title={project.title}
-          image={project.mainImage}
-          to={project.url}
-        />
-      ))}
-    </Root>
-  </>
-);
+const MyWork = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [projects, setProjects] = useState([]);
+
+  const handleGetProjectsData = async () => {
+    const { data } = await fetchComponentData({
+      endpoint: '/api/projects',
+      mapper: d => ({ ...d }),
+    });
+    setIsLoading(false);
+    setProjects(data);
+  };
+
+  useEffect(() => {
+    handleGetProjectsData();
+  }, []);
+
+  return (
+    <>
+      <ScrollTop />
+      <Root
+        variants={pageAnimation}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        style={{ background: '#fff' }}
+      >
+        <FramesContainer variants={sliderContainer}>
+          <Frame1 variants={sliderAnimation} />
+          <Frame2 variants={sliderAnimation} />
+          <Frame3 variants={sliderAnimation} />
+          <Frame4 variants={sliderAnimation} />
+        </FramesContainer>
+        {!isLoading && projects.map(project => (
+          <ProjectCard
+            key={project.title}
+            title={project.title}
+            image={project.mainImage}
+            to={project.url}
+          />
+        ))}
+        {isLoading && <Loader type="Oval" />}
+      </Root>
+    </>
+  );
+};
 
 export default MyWork;

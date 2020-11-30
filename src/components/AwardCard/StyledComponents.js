@@ -5,8 +5,15 @@ import {
   P,
 } from '../Foundation';
 
+import { getMediaMinWidth } from '../../utils';
+
 const RootAward = styled.div`
   padding: 5rem;
+  width: 100%;
+
+  ${getMediaMinWidth('md')} {
+    max-width: 35rem;
+  }
 
   ${H3} {
     font-size: 1.25rem;

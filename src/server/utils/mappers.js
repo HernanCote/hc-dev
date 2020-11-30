@@ -12,7 +12,7 @@ const commonProjectData = (item, mapAwards = false) => ({
   slug: get(item, 'slug'),
   title: get(item, 'metadata.title'),
   mainImage: get(item, 'metadata.main_image.url'),
-  secondaryImage: get(item, 'metadata.secondaryImage.url') || undefined,
+  secondaryImage: get(item, 'metadata.secondary_image.url') || undefined,
   url: get(item, 'metadata.url'),
   awards: mapAwards ? mapProjectAwards(get(item, 'metadata.awards') || []) : undefined,
 });

@@ -1,4 +1,3 @@
-const { commonProjectData } = require('../../utils/mappers');
 const { getEndpointData } = require('../../utils/requests');
 const {
   toDTO,

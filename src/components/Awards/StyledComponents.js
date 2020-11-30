@@ -2,15 +2,15 @@ import styled from 'styled-components';
 import { getMediaMinWidth } from '../../utils';
 
 const Root = styled.div`
-  min-height: 80vh;
   display: block;
-  margin: 2rem;
-  justify-content: space-around;
+  margin: 0 5rem;
+  width: 100%;
 
-  ${getMediaMinWidth('md')} {
+  ${getMediaMinWidth('sm')} {
     display: flex;
     align-items: center;
-    margin: 5rem 10rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 `;
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const set = require('lodash/set');
-const { resolve } = require('path');
+const { resolve, join } = require('path');
 
 const config = require('./utils/config-loader');
 
@@ -45,6 +45,16 @@ async function init() {
   expressApp.use('/api/*', endpointNotFoundMiddleware);
 
   logger.info('hc-dev dependencies initialized');
+
+  if (process.env.NODE_ENV === 'production') {
+    expressApp.use(express.static(join(__dirname, '../../build')));
+
+    expressApp.get('*', (_, res) => res.sendFile(resolve(__dirname, '..', '..', 'build', 'index.html')));
+  } else {
+    expressApp.get('/', (_, res) => {
+      res.send(`API is running on port ${port}...`);
+    });
+  }
 
   const server = expressApp.listen(port, host, err => {
     if (err) throw err;
