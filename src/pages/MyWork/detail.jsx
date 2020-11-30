@@ -21,7 +21,7 @@ const RootDetail = styled(motion.div)`
 `;
 
 const HeadLine = styled.div`
-  padding-top: 5rem;
+  padding-top: 2rem;
   
   ${H2} {
     text-align: center;
@@ -37,6 +37,7 @@ const HeadLine = styled.div`
 
 const ImageDisplay = styled.div`
   min-height: 50vh;
+  margin-top: 4rem;
   ${Img} {
     width: 100%;
     height: 70%;

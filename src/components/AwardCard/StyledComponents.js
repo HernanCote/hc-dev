@@ -9,10 +9,12 @@ import { getMediaMinWidth } from '../../utils';
 
 const RootAward = styled.div`
   padding: 5rem;
-  width: 100%;
+  width: 85%;
 
   ${getMediaMinWidth('md')} {
+    height: 20rem;
     max-width: 35rem;
+    width: 100%;
   }
 
   ${H3} {
@@ -28,7 +30,7 @@ const Line = styled.div`
   width: 50%;
   background: ${({ theme }) => theme.colors.shamrock};
   height: 0.5rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 `;
 
 export {

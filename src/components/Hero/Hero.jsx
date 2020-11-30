@@ -27,6 +27,7 @@ import me from '../../assets/img/me.jpg';
 
 const Hero = () => (
   <Layout>
+    <Wave />
     <Description>
       <Title>
         <HideWrapper>
@@ -69,7 +70,6 @@ const Hero = () => (
         alt="Huy with camera"
       />
     </ImageWrapper>
-    <Wave />
   </Layout>
 );
 

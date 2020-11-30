@@ -19,6 +19,7 @@ const ServicesWrapper = styled(Layout)`
 `;
 
 const CardsWrapper = styled.div`
+  margin: 0 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
