@@ -1,28 +1,28 @@
-import Clock from '../../assets/img/clock.svg';
-import Diaphragm from '../../assets/img/diaphragm.svg';
-import Money from '../../assets/img/money.svg';
-import Teamwork from '../../assets/img/teamwork.svg';
+import Clock from '../../assets/svg/clock.svg';
+import Diaphragm from '../../assets/svg/diaphragm.svg';
+import Money from '../../assets/svg/money.svg';
+import Teamwork from '../../assets/svg/teamwork.svg';
 
 const servicesData = [
   {
     title: 'Efficient',
     icon: Clock,
-    description: 'Lorem ipsum dolor sit amet.',
+    description: 'Efficiency as flagship',
   },
   {
     title: 'Teamwork',
     icon: Teamwork,
-    description: 'Lorem ipsum dolor sit amet.',
+    description: 'Work together!',
   },
   {
-    title: 'Diaphragm',
+    title: 'Focus',
     icon: Diaphragm,
-    description: 'Lorem ipsum dolor sit amet.',
+    description: 'Get things done the right way!',
   },
   {
     title: 'Affordable',
     icon: Money,
-    description: 'Lorem ipsum dolor sit amet.',
+    description: 'Fair work, fair price',
   },
 ];
 

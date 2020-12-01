@@ -36,7 +36,7 @@ const theme = {
   colors: {
     white: '#FFFFFF',
     whiteRgb: '255, 255, 255',
-    blackened: '#1F1F1F',
+    blackened: '#353535',
     black: '#000000',
     blackRgb: '0, 0, 0',
     background: '#1b1b1b',

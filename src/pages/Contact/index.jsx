@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import {
   MotionH2,
@@ -16,7 +17,7 @@ import ScrollTop from '../../components/hocs/ScrollTop';
 
 const ContactRoot = styled(motion.div)`
   padding: 2rem;
-  color: #353535;
+  color: ${({ theme }) => theme.colors.blackened};
   min-height: 90vh;
   font-size: 0.75rem;
 
@@ -28,7 +29,7 @@ const ContactRoot = styled(motion.div)`
 
 const Title = styled.div`
   margin-bottom: 4rem;
-  color: black;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const Hide = styled.div`
@@ -39,7 +40,7 @@ const Circle = styled.div`
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
-  background: #353535;
+  background: ${({ theme }) => theme.colors.blackened};
 `;
 
 const Social = styled(motion.div)`
@@ -49,6 +50,11 @@ const Social = styled(motion.div)`
   ${H2} {
     margin: 2rem;
   }
+`;
+
+const Link = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.blackened};
 `;
 
 const Contact = () => (
@@ -72,19 +78,24 @@ const Contact = () => (
       <Hide>
         <Social variants={titleAnimation}>
           <Circle />
-          <H2>Send me a message.</H2>
+          <H2>hernan.cote@outlook.com</H2>
         </Social>
       </Hide>
       <Hide>
         <Social variants={titleAnimation}>
-          <Circle />
-          <H2>Send an Email.</H2>
-        </Social>
-      </Hide>
-      <Hide>
-        <Social variants={titleAnimation}>
-          <Circle />
-          <H2>My Social Media</H2>
+          <Link
+            target="_blank"
+            href="https://github.com/HernanCote/"
+            style={{ marginRight: '1rem' }}
+          >
+            <FaGithub size="4rem" />
+          </Link>
+          <Link
+            target="_blank"
+            href="https://www.linkedin.com/in/hernancote/"
+          >
+            <FaLinkedin size="4rem" />
+          </Link>
         </Social>
       </Hide>
     </ContactRoot>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Wave from '../Wave';
 import {
@@ -56,12 +57,14 @@ const Hero = () => (
       >
         Contact me for any tech ideas you have. I am a professional with amazing skills.
       </MotionP>
-      <MotionButton
-        type="button"
-        variants={fadeAnimation}
-      >
-        Contact
-      </MotionButton>
+      <Link to="/contact">
+        <MotionButton
+          type="button"
+          variants={fadeAnimation}
+        >
+          Contact
+        </MotionButton>
+      </Link>
     </Description>
     <ImageWrapper className="image">
       <MotionImg
