@@ -3,10 +3,12 @@ import { getMediaMinWidth } from '../../utils';
 
 const Root = styled.div`
   display: block;
-  margin: 0 5rem;
+  padding: 0 2rem;
   width: 100%;
 
-  ${getMediaMinWidth('sm')} {
+  ${getMediaMinWidth('md')} {
+    padding: 0;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: flex-start;

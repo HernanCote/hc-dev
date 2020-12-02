@@ -11,7 +11,9 @@ import {
 } from '../Hero';
 
 const Root = styled(Layout)`
+  min-height: 0;
   display: block;
+  overflow: hidden;
 
   ${Span} {
     display: block;
@@ -27,7 +29,11 @@ const Root = styled(Layout)`
   }
 `;
 
+const HideContainer = styled.div`
+  overflow: hidden;
+`;
+
 export {
-  // eslint-disable-next-line import/prefer-default-export
   Root,
+  HideContainer,
 };

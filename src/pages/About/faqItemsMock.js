@@ -6,8 +6,13 @@ const faqItems = [
   },
   {
     id: 2,
-    title: 'Skills',
-    description: 'My skills include but are not limited to Back-End and Front-End including C#, ASP.NET Core, NodeJS, ReactJS, NextJS, AWS and Containers.',
+    title: 'Programming Language Skills',
+    description: 'My skills include but are not limited to Back-End and Front-End including C#, ASP.NET Core, NodeJS, ReactJS, NextJS.',
+  },
+  {
+    id: 3,
+    title: 'Cloud Skills',
+    description: 'I have worked with Azure and AWS Cloud Providers.',
   },
 ];
 

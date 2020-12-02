@@ -7,7 +7,7 @@ const Root = styled.div`
 
 const Spinner = styled(Loader)`
   position: absolute;
-  left: 50%;
+  left: calc(50% - 3rem);
   top: 50%;
 `;
 

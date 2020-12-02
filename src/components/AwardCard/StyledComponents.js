@@ -8,10 +8,10 @@ import {
 import { getMediaMinWidth } from '../../utils';
 
 const RootAward = styled.div`
-  padding: 5rem;
-  width: 85%;
+  padding: 2rem 0;
 
   ${getMediaMinWidth('md')} {
+    padding: 5rem;
     height: 20rem;
     max-width: 35rem;
     width: 100%;

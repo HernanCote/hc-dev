@@ -10,6 +10,7 @@ import {
 import {
   ServicesWrapper,
   CardsWrapper,
+  HideContainer,
 } from './StyledComponents';
 import {
   Description,
@@ -25,29 +26,31 @@ const Services = ({
   const [element, controls] = useScroll();
 
   return (
-    <ServicesWrapper
-      variants={scrollRevealAnimation}
-      animate={controls}
-      initial="hidden"
-      ref={element}
-    >
-      <Description>
-        <H2>High <Span>quality</Span> services</H2>
-        <CardsWrapper>
-          {services.map(service => (
-            <ServicesCard
-              key={service.title}
-              title={service.title}
-              icon={service.icon}
-              description={service.description}
-            />
-          ))}
-        </CardsWrapper>
-      </Description>
-      <ImageWrapper>
-        <MotionImg src={code} alt="services" />
-      </ImageWrapper>
-    </ServicesWrapper>
+    <HideContainer>
+      <ServicesWrapper
+        variants={scrollRevealAnimation}
+        animate={controls}
+        initial="hidden"
+        ref={element}
+      >
+        <Description>
+          <H2>High <Span>quality</Span> services</H2>
+          <CardsWrapper>
+            {services.map(service => (
+              <ServicesCard
+                key={service.title}
+                title={service.title}
+                icon={service.icon}
+                description={service.description}
+              />
+            ))}
+          </CardsWrapper>
+        </Description>
+        <ImageWrapper>
+          <MotionImg src={code} alt="services" />
+        </ImageWrapper>
+      </ServicesWrapper>
+    </HideContainer>
   );
 };
 

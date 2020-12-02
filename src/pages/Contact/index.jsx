@@ -30,6 +30,16 @@ const ContactRoot = styled(motion.div)`
 const Title = styled.div`
   margin-bottom: 4rem;
   color: ${({ theme }) => theme.colors.black};
+  
+  ${MotionH2} {
+    font-size: 3rem;
+  }
+
+  ${getMediaMinWidth('md')} {
+    ${MotionH2} {
+      font-size: 4rem;
+    }
+  }
 `;
 
 const Hide = styled.div`
@@ -38,17 +48,29 @@ const Hide = styled.div`
 
 const Circle = styled.div`
   border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  width: 1rem;
+  height: 1rem;
+
   background: ${({ theme }) => theme.colors.blackened};
+  ${getMediaMinWidth('sm')} {
+    width: 3rem;
+    height: 3rem;
+  }
 `;
 
 const Social = styled(motion.div)`
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 
   ${H2} {
-    margin: 2rem;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    
+    ${getMediaMinWidth('sm')} {
+      margin: 2rem;
+      font-size: 4rem;
+    }
   }
 `;
 

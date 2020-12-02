@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 import {
   H2,
@@ -48,12 +47,18 @@ const Description = styled.div`
 const ImageWrapper = styled.div`
   z-index: 2;
   flex: 1;
-  overflow: hidden;
+  overflow-x: hidden;
 
   ${MotionImg} {
+    height: 25rem;
     width: 100%;
-    height: 80vh;
-    object-fit: cover;
+    object-fit: contain;
+
+    ${getMediaMinWidth('sm')} {
+      width: 100%;
+      height: 80vh;
+      object-fit: cover;
+    }
   }
 `;
 

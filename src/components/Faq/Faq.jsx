@@ -8,6 +8,7 @@ import {
 
 import {
   Root,
+  HideContainer,
 } from './StyledComponents';
 
 import FaqItem from '../FaqItem';
@@ -21,7 +22,7 @@ const Faq = ({
   const [element, controls] = useScroll();
 
   return (
-    <>
+    <HideContainer>
       {faqs.length > 0 && (
       <Root
         variants={scrollRevealAnimation}
@@ -43,7 +44,7 @@ const Faq = ({
         </AnimateSharedLayout>
       </Root>
       )}
-    </>
+    </HideContainer>
   );
 };
 
