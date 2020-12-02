@@ -15,6 +15,7 @@ import {
 } from '../../utils';
 
 import ScrollTop from '../../components/hocs/ScrollTop';
+import Meta from '../../components/Meta';
 
 const RootDetail = styled(motion.div)`
   color: ${({ theme }) => theme.colors.white};
@@ -67,6 +68,9 @@ const MyWorkDetail = ({
 
   return (
     <>
+      <Meta
+        title={`Hernán Cote | My work - ${project?.title}`}
+      />
       <ScrollTop />
       <RootDetail
         variants={pageAnimation}

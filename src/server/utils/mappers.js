@@ -10,6 +10,7 @@ const mapProjectAwards = data => data.map(item => ({
 const commonProjectData = (item, mapAwards = false) => ({
   id: get(item, '_id'),
   slug: get(item, 'slug'),
+  thumbnail: get(item, 'metadata.thumbnail.url'),
   title: get(item, 'metadata.title'),
   mainImage: get(item, 'metadata.main_image.url'),
   secondaryImage: get(item, 'metadata.secondary_image.url') || undefined,

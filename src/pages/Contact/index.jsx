@@ -14,6 +14,7 @@ import {
   titleAnimation,
 } from '../../utils';
 import ScrollTop from '../../components/hocs/ScrollTop';
+import Meta from '../../components/Meta';
 
 const ContactRoot = styled(motion.div)`
   padding: 2rem;
@@ -81,6 +82,10 @@ const Link = styled.a`
 
 const Contact = () => (
   <>
+    <Meta
+      title="Hernán Cote | Contact"
+      description="Contact me"
+    />
     <ScrollTop />
     <ContactRoot
       variants={pageAnimation}

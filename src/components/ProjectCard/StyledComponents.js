@@ -7,7 +7,7 @@ import {
 } from '../Foundation';
 
 const Root = styled(motion.div)`
-  padding-bottom: 10rem;
+  padding-bottom: 3rem;
 
   ${MotionH2} {
     padding: 1rem 0;

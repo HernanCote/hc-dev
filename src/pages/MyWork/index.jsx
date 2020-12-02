@@ -13,6 +13,7 @@ import {
   sliderContainer,
 } from '../../utils';
 import ScrollTop from '../../components/hocs/ScrollTop';
+import Meta from '../../components/Meta';
 
 const Root = styled(motion.div)`
   min-height: 100vh;
@@ -66,6 +67,10 @@ const MyWork = () => {
 
   return (
     <>
+      <Meta
+        title="Hernán Cote | My Work"
+        description="Take a look at the projects I had carried on!"
+      />
       <ScrollTop />
       <Root
         variants={pageAnimation}
@@ -84,7 +89,7 @@ const MyWork = () => {
           <ProjectCard
             key={project.title}
             title={project.title}
-            image={project.mainImage}
+            image={project.thumbnail}
             to={project.url}
           />
         ))}

@@ -11,11 +11,15 @@ import { pageAnimation } from '../../utils';
 import faqItems from './faqItemsMock';
 import servicesData from './servicesData';
 import ScrollTop from '../../components/hocs/ScrollTop';
+import Meta from '../../components/Meta';
 
 const Root = styled(motion.div)``;
 
 const About = () => (
   <>
+    <Meta
+      title="Hernán Cote | About"
+    />
     <ScrollTop />
     <Root
       variants={pageAnimation}
