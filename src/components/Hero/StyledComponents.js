@@ -47,7 +47,7 @@ const Description = styled.div`
 const ImageWrapper = styled.div`
   z-index: 2;
   flex: 1;
-  overflow-x: hidden;
+  overflow: hidden;
 
   ${MotionImg} {
     height: 25rem;

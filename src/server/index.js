@@ -85,7 +85,7 @@ const handleGlobalError = err => {
     console.error(err);
 
     // eslint-disable-next-line
-        const createCallSiteRecord = require('callsite-record');
+    const createCallSiteRecord = require('callsite-record');
 
     logger.error(`🚨 Uncaught Error:\n${createCallSiteRecord({ forError: err }).renderSync()}`);
   } else {
