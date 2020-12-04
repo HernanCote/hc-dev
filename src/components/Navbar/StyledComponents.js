@@ -6,7 +6,7 @@ import { getMediaMinWidth } from '../../utils';
 const Root = styled.nav`
   position: sticky;
   top: -1px;
-  z-index: 1000;
+  z-index: 100000;
   min-height: ${({ theme }) => theme.heights.navbar};
   display: flex;
   flex-direction: column;

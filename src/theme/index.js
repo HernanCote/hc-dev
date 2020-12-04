@@ -1,5 +1,6 @@
 const theme = {
   breakpoints: {
+    xsm: 480,
     sm: 768,
     md: 1024,
     lg: 1300,
@@ -35,6 +36,7 @@ const theme = {
   },
   colors: {
     white: '#FFFFFF',
+    whiteGray: '#FAFAFA',
     whiteRgb: '255, 255, 255',
     blackened: '#353535',
     black: '#000000',
@@ -43,7 +45,8 @@ const theme = {
     backgroundRgb: '0, 15, 38',
     lightGray: '#CCC',
     hcGreen: '#0C4D35',
-    shamrock: '#23d997',
+    shamrock: '#1abc9c',
+    shamrockDarken: '#149279',
     hcBlue: '#239FD9',
     hcLighterBlue: '#23BED9',
     shamrockRgb: '35, 217, 151',
