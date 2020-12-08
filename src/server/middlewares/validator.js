@@ -57,8 +57,6 @@ const createValidJsonResponse = ({
     response.data = content.data || content;
   }
 
-  response.state = { ...res.state, ...response.state };
-
   res.status(response.statusCode).json(response);
 };
 

@@ -11,11 +11,9 @@ import {
   ServicesWrapper,
   CardsWrapper,
   HideContainer,
-} from './StyledComponents';
-import {
-  Description,
   ImageWrapper,
-} from '../Hero';
+  Description,
+} from './StyledComponents';
 
 import code from '../../assets/img/code2.jpg';
 import { scrollRevealAnimation } from '../../utils';
@@ -33,6 +31,9 @@ const Services = ({
         initial="hidden"
         ref={element}
       >
+        <ImageWrapper>
+          <MotionImg src={code} alt="services" />
+        </ImageWrapper>
         <Description>
           <H2>High <Span>quality</Span> services</H2>
           <CardsWrapper>
@@ -46,9 +47,6 @@ const Services = ({
             ))}
           </CardsWrapper>
         </Description>
-        <ImageWrapper>
-          <MotionImg src={code} alt="services" />
-        </ImageWrapper>
       </ServicesWrapper>
     </HideContainer>
   );

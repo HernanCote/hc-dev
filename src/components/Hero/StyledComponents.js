@@ -12,7 +12,6 @@ import { getMediaMinWidth } from '../../utils';
 
 const Layout = styled(motion.div)`
   display: block;
-  min-height: 90vh;
   padding: 2rem 2rem;
   color: ${({ theme }) => theme.colors.white};
   text-align: center;

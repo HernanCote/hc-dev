@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import {
   Layout,
+  ImageWrapper as BaseImageWrapper,
+  Description as BaseDescription,
 } from '../Hero';
 import {
   H2,
@@ -12,30 +14,50 @@ import { getMediaMinWidth } from '../../utils';
 
 const ServicesWrapper = styled(Layout)`
   max-width: 100vw;
+  text-align: center;
   overflow: hidden;
   ${H2} {
     padding-bottom: 5rem;
   }
 
-  ${P} {
-    width: 100%;
-    ${getMediaMinWidth('sm')} {
-      width: 70%;
+  ${getMediaMinWidth('lg')} {
+    text-align: end;
   }
-    padding: 2rem 0 4rem 0;
+`;
+
+const Description = styled(BaseDescription)`
+  justify-content: flex-end;
+  ${getMediaMinWidth('lg')} {
+    padding-right: 0;
+    padding-left: 5rem;
   }
 `;
 
 const CardsWrapper = styled.div`
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  justify-items: center;
+
+  ${getMediaMinWidth('sm')} {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   ${getMediaMinWidth('lg')} {
-    justify-content: left;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    justify-content: end;
   }
 `;
+
+const ImageWrapper = styled(BaseImageWrapper)`
+  display: none;
+  ${getMediaMinWidth('lg')} {
+    display: block;
+  }
+`;
+
 const HideContainer = styled.div`
   overflow: hidden;
 `;
@@ -44,4 +66,6 @@ export {
   ServicesWrapper,
   CardsWrapper,
   HideContainer,
+  ImageWrapper,
+  Description,
 };
