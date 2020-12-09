@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { getMediaMinWidth } from '../../utils';
 import { H2 } from '../Foundation';
 
-const Root = styled(motion.section)`
+const Root = styled(motion.div)`
   padding: 0 5rem;
   user-select: none;
 

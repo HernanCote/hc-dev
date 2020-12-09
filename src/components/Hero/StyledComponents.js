@@ -10,7 +10,7 @@ import {
 
 import { getMediaMinWidth } from '../../utils';
 
-const Layout = styled(motion.div)`
+const Layout = styled(motion.section)`
   display: block;
   padding: 2rem 2rem;
   color: ${({ theme }) => theme.colors.white};

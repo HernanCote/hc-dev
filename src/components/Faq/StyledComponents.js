@@ -29,7 +29,7 @@ const Root = styled(Layout)`
   }
 `;
 
-const HideContainer = styled.div`
+const HideContainer = styled.section`
   overflow: hidden;
 `;
 

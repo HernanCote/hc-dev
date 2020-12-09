@@ -21,19 +21,21 @@ const App = () => {
     <>
       <GlobalStyle />
       <Navbar />
-      <AnimatePresence
-        exitBeforeEnter
-      >
-        <Switch
-          location={location}
-          key={location.pathname}
+      <main>
+        <AnimatePresence
+          exitBeforeEnter
         >
-          <Route path="/my-work" exact component={MyWork} />
-          <Route path="/my-work/:slug" component={MyWorkDetail} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/" exact component={About} />
-        </Switch>
-      </AnimatePresence>
+          <Switch
+            location={location}
+            key={location.pathname}
+          >
+            <Route path="/my-work" exact component={MyWork} />
+            <Route path="/my-work/:slug" component={MyWorkDetail} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/" exact component={About} />
+          </Switch>
+        </AnimatePresence>
+      </main>
     </>
   );
 };
