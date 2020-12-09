@@ -35,7 +35,7 @@ const Hero = () => (
           <MotionH2
             variants={titleAnimation}
           >
-            Hi! My name is
+            Hello! My name is
           </MotionH2>
         </HideWrapper>
         <HideWrapper>

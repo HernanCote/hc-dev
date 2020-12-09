@@ -4,7 +4,12 @@ import { getMediaMinWidth } from '../../utils';
 import { H2 } from '../Foundation';
 
 const Root = styled(motion.section)`
-  padding: 0 10rem;
+  padding: 0 5rem;
+  user-select: none;
+
+  ${getMediaMinWidth('sm')} {
+    padding: 0 10rem;
+  }
 `;
 
 const Title = styled.div`
@@ -14,9 +19,13 @@ const Title = styled.div`
   margin-bottom: 4rem;
 
   ${H2} {
-    font-size: 4rem;
+    font-size: 3.5rem;
     line-height: 5.5rem;
     font-weight: 100;
+
+    ${getMediaMinWidth('sm')} {
+      font-size: 4rem;
+    }
   }
 
   ::after {
@@ -26,8 +35,14 @@ const Title = styled.div`
     left: 50%;
     transform: translateX(-50%);
     height: 0.25rem;
-    width: 14.75rem;
+    width: 13rem;
     background-color: ${({ theme }) => theme.colors.shamrock};
+  }
+
+  ${getMediaMinWidth('sm')} {
+    ::after {
+      width: 14.75rem;
+    }
   }
 `;
 

@@ -9,7 +9,6 @@ const SkillTitle = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0 0.5rem;
-  margin-bottom: 0.5rem;
 
   ${H3} {
     font-size: 1.25rem;
@@ -19,7 +18,7 @@ const SkillTitle = styled.div`
   ::after {
     content: "";
     position: absolute;
-    bottom: -0.3rem;
+    bottom: -0.5rem;
     right: 50%;
     width: 0;
     height: 0.25rem;
@@ -31,7 +30,7 @@ const SkillTitle = styled.div`
   ::before {
     content: "";
     position: absolute;
-    bottom: -0.3rem;
+    bottom: -0.5rem;
     left: 50%;
     width: 0;
     height: 0.25rem;
@@ -41,9 +40,32 @@ const SkillTitle = styled.div`
   }
 `;
 
-const SkillImage = styled.div``;
+const SkillImage = styled.div`
+  position: relative;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.5s;
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  ::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(100, 100, 100, 0.3);
+    z-index: 1;
+  }
+`;
 
 const Image = styled.img`
+  border-radius: 50%;
   position: relative;
   object-fit: contain;
   height: 7rem;
@@ -51,14 +73,21 @@ const Image = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.5s;
+  z-index: 4;
 `;
 
 const Description = styled(P)`
-  font-size: 1.5rem;
+  padding: 0;
+  overflow: hidden;
+  font-size: 1rem;
+  padding-top: 0.5rem;
+
+  ${getMediaMinWidth('xsm')} {
+    font-size: 1.4rem;
+  }
 
   ${getMediaMinWidth('lg')} {
-    font-size: 1.75rem;
+    padding: 1rem 4rem;
   }
 `;
 
@@ -66,8 +95,11 @@ const SkillBox = styled.div`
   padding: 1rem;
   color: #ddd;
   cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10rem minmax(7rem, 10rem);
 
-  :hover ${Image} {
+  :hover ${SkillImage} {
     transform: translateY(-10px);
   }
 
