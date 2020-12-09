@@ -18,6 +18,7 @@ module.exports = {
         endpoints: {
           projects: 'objects',
           project: 'object/:slug',
+          skills: 'objects',
         },
       },
     },

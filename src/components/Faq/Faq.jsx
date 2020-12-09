@@ -13,23 +13,12 @@ import {
 
 import FaqItem from '../FaqItem';
 
-import { useScroll } from '../hocs';
-import { scrollRevealAnimation } from '../../utils';
-
 const Faq = ({
   faqs = [],
-}) => {
-  const [element, controls] = useScroll();
-
-  return (
-    <HideContainer>
-      {faqs.length > 0 && (
-      <Root
-        variants={scrollRevealAnimation}
-        animate={controls}
-        initial="hidden"
-        ref={element}
-      >
+}) => (
+  <HideContainer>
+    {faqs.length > 0 && (
+      <Root>
         <H2>
           Any questions?
           <Span>FAQ</Span>
@@ -43,9 +32,8 @@ const Faq = ({
           ))}
         </AnimateSharedLayout>
       </Root>
-      )}
-    </HideContainer>
-  );
-};
+    )}
+  </HideContainer>
+);
 
 export default Faq;

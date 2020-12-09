@@ -7,7 +7,6 @@ import {
 } from '../Hero';
 import {
   H2,
-  P,
 } from '../Foundation';
 
 import { getMediaMinWidth } from '../../utils';

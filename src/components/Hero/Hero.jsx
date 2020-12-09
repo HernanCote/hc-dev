@@ -35,20 +35,20 @@ const Hero = () => (
           <MotionH2
             variants={titleAnimation}
           >
-            I work to make
+            Hi! My name is
           </MotionH2>
         </HideWrapper>
         <HideWrapper>
           <MotionH2
             variants={titleAnimation}
-          >Your <Span>dreams</Span> come
+          ><Span>Hernán Cote</Span>
           </MotionH2>
         </HideWrapper>
         <HideWrapper>
           <MotionH2
             variants={titleAnimation}
           >
-            true.
+            Software Craftsman and Architect
           </MotionH2>
         </HideWrapper>
       </Title>

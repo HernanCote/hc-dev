@@ -1,4 +1,5 @@
 const { get } = require('./core');
+const { decodeHtml } = require('./misc');
 
 const mapProjectAwards = data => data.map(item => ({
   id: get(item, '_id'),
@@ -22,7 +23,16 @@ const mapProjectsData = (data, mapAwards) => data.map(item => ({
   ...commonProjectData(item, mapAwards),
 }));
 
+const mapSkillsData = data => data.map(item => ({
+  id: get(item, '_id'),
+  title: get(item, 'title'),
+  description: decodeHtml(get(item, 'content')),
+  image: get(item, 'metadata.image.url'),
+
+}));
+
 module.exports = {
   commonProjectData,
   mapProjectsData,
+  mapSkillsData,
 };
