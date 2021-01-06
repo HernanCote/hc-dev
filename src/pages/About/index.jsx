@@ -46,9 +46,9 @@ const About = () => {
         exit="exit"
       >
         <Hero />
-        <Services services={servicesData} />
-        <SkillList skills={skills} />
-        <Faq faqs={faqItems} />
+        {servicesData && <Services services={servicesData} />}
+        {skills.length > 0 && <SkillList skills={skills} />}
+        {faqItems && <Faq faqs={faqItems} />}
       </Root>
     </>
   );

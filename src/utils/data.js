@@ -95,6 +95,7 @@ const fetchComponentData = ({
       return await requestInTransit;
     } catch (err) {
       const processedError = errorHandler(err, { req, res, ...props });
+      // eslint-disable-next-line no-console
       console.error('Error on request', processedError);
       return processedError;
     }
