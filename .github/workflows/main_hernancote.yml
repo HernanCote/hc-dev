@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'hernancote'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f531c8a8c9d54c16b3facdd9d27f1a69 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_bb0a25d46e654692b99dc1baf768f7f5 }}
         package: .
