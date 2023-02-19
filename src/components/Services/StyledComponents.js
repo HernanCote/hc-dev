@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-import {
+import
+{
   Layout,
   ImageWrapper as BaseImageWrapper,
   Description as BaseDescription,
 } from '../Hero';
-import {
+import
+{
   H2,
 } from '../Foundation';
 
@@ -52,6 +54,9 @@ const CardsWrapper = styled.div`
 
 const ImageWrapper = styled(BaseImageWrapper)`
   display: none;
+  overflow: hidden;
+  border-radius: 10px;
+
   ${getMediaMinWidth('lg')} {
     display: block;
   }
@@ -61,7 +66,8 @@ const HideContainer = styled.section`
   overflow: hidden;
 `;
 
-export {
+export
+{
   ServicesWrapper,
   CardsWrapper,
   HideContainer,

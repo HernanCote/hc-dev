@@ -88,7 +88,8 @@ const Img = styled.img``;
 
 const MotionImg = styled(motion.img)``;
 
-export {
+export
+{
   MotionImg,
   Img,
   Span,

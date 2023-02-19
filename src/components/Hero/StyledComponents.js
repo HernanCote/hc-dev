@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import {
+import
+{
   H2,
   MotionH2,
   MotionImg,
@@ -46,12 +47,13 @@ const Description = styled.div`
 const ImageWrapper = styled.div`
   z-index: 2;
   flex: 1;
-  overflow: hidden;
+  overflow: hidden; 
 
   ${MotionImg} {
     height: 25rem;
     width: 100%;
     object-fit: contain;
+    border-radius: 10px;
 
     ${getMediaMinWidth('sm')} {
       width: 100%;
@@ -67,7 +69,8 @@ const HideWrapper = styled.div`
   overflow: hidden;
 `;
 
-export {
+export
+{
   Layout,
   Description,
   ImageWrapper,

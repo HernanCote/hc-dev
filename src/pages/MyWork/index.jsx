@@ -48,6 +48,16 @@ const Frame4 = styled(Frame1)`
   background: ${({ theme }) => theme.colors.shamrock};
 `;
 
+const ProjectCards = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 2rem;
+
+  ${getMediaMinWidth('md')} {
+    grid-template-columns: 50% 50%;
+  }
+`;
+
 const MyWork = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [projects, setProjects] = useState([]);
@@ -85,14 +95,16 @@ const MyWork = () => {
           <Frame3 variants={sliderAnimation} />
           <Frame4 variants={sliderAnimation} />
         </FramesContainer>
-        {!isLoading && projects.map(project => (
-          <ProjectCard
-            key={project.title}
-            title={project.title}
-            image={project.thumbnail}
-            to={project.url}
-          />
-        ))}
+        <ProjectCards>
+          {!isLoading && projects.map(project => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              image={project.thumbnail}
+              to={project.url}
+            />
+          ))}
+        </ProjectCards>
         {isLoading && <Loader type="Oval" />}
       </Root>
     </>
