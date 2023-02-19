@@ -92,10 +92,17 @@ const getEndpointData = async ({ config }, endpoint, originalUnPickedParams = {}
   } catch (err) {
     const endTime = performance.now();
 
+    // eslint-disable-next-line prefer-const
+    let paramsCopy = { ...parameters };
+
+    if (paramsCopy.read_key) {
+      delete paramsCopy.read_key;
+    }
+
     logger.error(`❌ Error requesting data: "${method.toUpperCase()}"`);
     logger.trace('📌 Status Code: ', err.response.status);
     logger.error('📌 Response: ', prettyJson(err.response.data));
-    logger.trace('📌 Parameters: ', prettyJson(parameters));
+    logger.trace('📌 Parameters: ', prettyJson(paramsCopy));
     logger.trace('📌 Payload: ', prettyJson(body));
     logger.trace('📌 Headers: ', prettyJson(headers));
     logger.error('📌 Time: ', `${(endTime - startTime).toFixed(2)} secs`);
